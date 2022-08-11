@@ -2,7 +2,7 @@ from typing import Optional
 
 
 # Task 1
-def to_power(x: Optional[int, float], exp: int) -> Optional[int, float]:
+def to_power(x: Optional[int, float], exp: int) -> Optional[int, float]:  # todo check typing error
     if exp < 0:
         raise ValueError('This function works only with exp > 0')
     elif exp == 1:
