@@ -2,16 +2,13 @@ from typing import Optional
 
 
 # Task 1
-def to_power(x: Optional[int, float], exp: int) -> Optional[int, float]:  # todo check typing error
+def to_power(x, exp):  # todo check typing error
     if exp < 0:
         raise ValueError('This function works only with exp > 0')
     elif exp == 1:
         return x
     num = x * to_power(x, (exp - 1))
     return num
-
-
-print(to_power(2, 4))
 
 
 # Task 2
@@ -31,9 +28,6 @@ def is_palindrome(looking_str: str, index: int = 0) -> bool:  # version 1.0
             is_palindrome(looking_str, index)
 
 
-# is_palindrome('noon')
-
-
 def is_palindrome1(word, index=0):  # version 1.1
     try:
         if word[index] == word[-(index + 1)]:
@@ -47,13 +41,6 @@ def is_palindrome1(word, index=0):  # version 1.1
     return True
 
 
-print(is_palindrome1('tenet'))
-print(is_palindrome1('k'))
-print(is_palindrome1('bob'))
-print(is_palindrome1('keyboard'))
-print(is_palindrome1('sassas'))
-
-
 # Task 3
 def mult(a: int, n: int) -> int:
     if n < 0:
@@ -62,9 +49,6 @@ def mult(a: int, n: int) -> int:
         return 0
     else:
         return a + mult(a, n - 1)
-
-
-print(mult(2, 5))
 
 
 # Task 4
@@ -81,9 +65,6 @@ def reverse(input_str: str) -> str:
         return input_str[-1] + reverse(input_str[:-1])
 
 
-print(reverse('hello'))
-
-
 # Task 5
 def sum_of_digits(digit_string: str) -> int:
     if len(digit_string) <= 0:
@@ -95,7 +76,3 @@ def sum_of_digits(digit_string: str) -> int:
             return int(digit_string[0]) + sum_of_digits(digit_string[1:])
         except ValueError:
             print('input string must be digit string')
-
-
-print(sum_of_digits('123'))
-print(sum_of_digits('t45n'))
